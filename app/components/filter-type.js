@@ -8,7 +8,7 @@ export default Ember.Component.extend({
       this.set('isLegit', false);
     } else{
       this.set('isLegit', true);
-    };
+    }
 
 
     this._super();

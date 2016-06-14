@@ -1,4 +1,4 @@
-{{log model}}
+
 {{#if isLegit}}
   <ul>
     {{#each model as |legislator|}}
@@ -6,5 +6,16 @@
     {{/each}}
   </ul>
 {{else}}
-  <p>Hi</p>
+  <ul>
+
+    {{#each model as |committee|}}
+
+      {{#if committee.subcommittee}}
+
+      {{else}}
+        {{committee-tile committee=committee allCommittees=model}}
+      {{/if}}
+
+    {{/each}}
+  </ul>
 {{/if}}

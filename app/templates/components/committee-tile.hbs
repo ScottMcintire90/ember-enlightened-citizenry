@@ -1,0 +1,9 @@
+<li><h4><button class="btn btn-primary" {{action 'showSubs'}}>{{committee.name}}</button></h4></li>
+{{#if isShowing}}
+  {{log committee}}
+
+  {{#each subCommittees as |legislator|}}
+    <li> {{legislator.name}} </li>
+  {{/each}}
+{{else}}
+{{/if}}

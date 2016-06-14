@@ -12,7 +12,7 @@ export default Ember.Route.extend({
     if (type === "legislators/locate"){
       url = 'http://congress.api.sunlightfoundation.com/'+type+'?apikey=' +key+ '&zip=' + zip;
     } else {
-      url = 'http://congress.api.sunlightfoundation.com/'+type+'?apikey=' +key;
+      url = 'http://congress.api.sunlightfoundation.com/'+type+'?apikey=' +key +'&per_page=all';
     }
 
     return Ember.$.getJSON(url).then(function(responseJSON) {
