@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   isLegit: false,
-  isCommittee: true,
+  isCommittee: false,
   init(){
     //if it is a committee this should be true
     if(this.get('model.0.committee_id') !== undefined){
