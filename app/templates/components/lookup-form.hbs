@@ -3,9 +3,9 @@
 <form>
   <div class="form-group">
     <label for="zip">Zip</label>
-    {{input value=zip id="zip"}}
+    {{input placeholder="90210" value=zip id="zip"}}
     {{#x-select value=type}}
-      {{#x-option value="legislator/locate"}}Legislators{{/x-option}}
+      {{#x-option value="legislators/locate"}}Legislators{{/x-option}}
       {{#x-option value="committees"}}Committees{{/x-option}}
     {{/x-select}}
   </div>
