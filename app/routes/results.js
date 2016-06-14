@@ -11,6 +11,8 @@ export default Ember.Route.extend({
     var type = queryParams[0];
     if (type === "legislators/locate"){
       url = 'http://congress.api.sunlightfoundation.com/'+type+'?apikey=' +key+ '&zip=' + zip;
+    } else if (type === "committees"){
+      url = 'http://congress.api.sunlightfoundation.com/'+type+'?apikey=' +key +'&per_page=all';
     } else {
       url = 'http://congress.api.sunlightfoundation.com/'+type+'?apikey=' +key +'&per_page=all';
     }

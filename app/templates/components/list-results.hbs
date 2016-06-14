@@ -1,21 +1,26 @@
-
 {{#if isLegit}}
+
   <ul>
     {{#each model as |legislator|}}
       <li> {{legislator.first_name}} {{legislator.last_name}}<br>Contact: <a href=  {{legislator.contact_form}}>{{legislator.contact_form}}</a></li>
     {{/each}}
   </ul>
-{{else}}
+
+{{else if isCommittee}}
+
   <ul>
-
     {{#each model as |committee|}}
-
       {{#if committee.subcommittee}}
-
       {{else}}
         {{committee-tile committee=committee allCommittees=model}}
       {{/if}}
+    {{/each}}
+  </ul>
 
+{{else}}
+  <ul>
+    {{#each model as |bill|}}
+        {{bill-tile bill=bill}}
     {{/each}}
   </ul>
 {{/if}}

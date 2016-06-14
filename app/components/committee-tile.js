@@ -5,19 +5,19 @@ export default Ember.Component.extend({
   subCommittees: [],
   init(){
     this.set('subCommittees', []);
-      var allCommittees = this.get('allCommittees');
+    var allCommittees = this.get('allCommittees');
     //loop everything in allCommittees
     for( var i=0; i< allCommittees.length; i++){
       if (allCommittees[i].parent_committee_id == this.get('committee').committee_id){
         //append to subCommittees array
         this.subCommittees.push(allCommittees[i]);
-        console.log(allCommittees[i].parent_committee_id);
       }
     }
-    console.log(this.get('subCommittees'));
 
 
-
+    if(this.subCommittees.length == 0){
+      this.subCommittees.push({name: "no sub committees"})
+    }
 
     this._super();
   },
