@@ -4,7 +4,11 @@
   <div class="form-group">
     <label for="zip">Zip</label>
     {{input value=zip id="zip"}}
+    {{#x-select value=type}}
+      {{#x-option value="legislator/locate"}}Legislators{{/x-option}}
+      {{#x-option value="committees"}}Committees{{/x-option}}
+    {{/x-select}}
   </div>
 
-  <button class="btn btn-primary" {{action 'zipLookup'}}>Submit</button>
+  <button class="btn btn-primary" {{action 'lookup'}}>Submit</button>
 </form>

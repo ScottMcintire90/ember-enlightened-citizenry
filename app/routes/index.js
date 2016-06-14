@@ -3,8 +3,13 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   actions: {
-    zipLookup(params) {
-      this.transitionTo('results', params.zip);
+    lookup(params) {
+
+      var query = params.type + ";-)" + params.zip;
+
+
+      this.transitionTo('results', query);
+
     }
   }
 });
